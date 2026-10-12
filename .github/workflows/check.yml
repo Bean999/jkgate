@@ -3,7 +3,7 @@ name: VPN Gate Node Check
 on:
   # 定时检测: 默认每 30 分钟一次。改成每 60 分钟: cron: "0 * * * *"
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/120 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -13,7 +13,7 @@ permissions:
 
 concurrency:
   group: gate-check
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   check:
@@ -71,4 +71,4 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Show site URL
-        run: 'echo "site: https://jerylihub.github.io/gate/ (deploy outcome: ${{ steps.deployment.outcome }})"'
+        run: 'echo "site: https://Bean999.github.io/jkgate/ (deploy outcome: ${{ steps.deployment.outcome }})"'
