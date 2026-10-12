@@ -17,7 +17,7 @@ concurrency:
 jobs:
   check:
     # 可选：runs-on: ubuntu-22.04 # 固定系统，避免10月自动升级Ubuntu26
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
       - name: Checkout
